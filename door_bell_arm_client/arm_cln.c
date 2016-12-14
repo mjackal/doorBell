@@ -79,7 +79,6 @@ void initConn(char * ip){
 	while(1)
 	{
 		FD_ZERO(&rfds);
-		//0标准输入，1标准输出、2标准错误输出
 		FD_SET(fd,&rfds);
 		maxfd = fd;
 		FD_SET(sfd,&rfds);
