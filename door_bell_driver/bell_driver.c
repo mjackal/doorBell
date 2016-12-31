@@ -86,7 +86,7 @@ static long bell_ioctl(struct file * file,unsigned int cmd,unsigned long arg){
 
 static ssize_t bell_read(struct file * file,char __user * buf,size_t length,loff_t * pos){
 	wait_event_interruptible(bell_wq,have_irq==1);
-	int dev_id = 1001;
+	int dev_id = 1000;
 	if(copy_to_user(buf,&dev_id,4)){
 		printk(KERN_EMERG "copy_to_user is failed:%d%s\n",__LINE__,__FUNCTION__);
 		return -EFAULT;
